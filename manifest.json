@@ -1,0 +1,15 @@
+{
+  "name": "Jam Sholat Abadi Jaya",
+  "short_name": "AbadiJaya",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#00ff88",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2699/2699194.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
