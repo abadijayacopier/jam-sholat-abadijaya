@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jam Sholat Abadi Jaya</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#00ff88">
+</head>
+<body>
+    <div class="container">
+        <h2 class="app-title">Jam Sholat Abadi Jaya</h2>
+        <h1 id="clock">00:00:00</h1>
+        <div id="next-prayer-info">Menghitung waktu sholat...</div>
+        <p id="date">Memuat tanggal...</p>
+        <p id="location">Mencari lokasi...</p>
+
+        <div class="prayer-grid" id="prayer-times">
+            <div class="loading">Mengambil jadwal...</div>
+        </div>
+
+        <button onclick="enableAudio()" id="audio-btn">Aktifkan Suara Adzan</button>
+
+        <div class="settings-panel">
+            <label><input type="checkbox" id="night-mute" checked> Mute Malam (22:00-04:00)</label>
+            <p id="battery-status">Baterai: --%</p>
+        </div>
+    </div>
+
+    <audio id="adzan-audio">
+        <source src="https://www.islamcan.com/audio/adhans/azan1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+    </script>
+</body>
+</html>
