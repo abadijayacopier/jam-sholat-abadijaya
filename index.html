@@ -1,1 +1,39 @@
-<!doctype html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071b16"><meta name="description" content="Jam Sholat Abadi Jaya"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="stylesheet" href="style.css"><title>Jam Sholat Abadi Jaya</title></head><body><main class="app"><header><div><b>ABADI JAYA</b><small>JAM SHOLAT DIGITAL</small></div><button id="full">⛶</button></header><section class="hero"><div class="loc">📍 <span id="location">Mencari lokasi…</span></div><p id="date">Memuat tanggal…</p><h1 id="clock">00:00:00</h1><strong id="next">Menghitung waktu sholat…</strong></section><section class="prayer-grid" id="prayer-times"><div class="loading">Mengambil jadwal…</div></section><div class="controls"><button id="audio">🔇 Aktifkan Suara Adzan</button><button id="locbtn">📍 Perbarui Lokasi</button></div><section class="info"><div>STATUS<strong id="status">Online</strong></div><div>BATERAI<strong id="battery">—</strong></div><div>MODE<strong>PWA</strong></div></section><label class="mute"><input type="checkbox" id="night" checked> Mute otomatis 22:00–04:00</label><footer>© 2026 Abadi Jaya · Jadwal AlAdhan</footer></main><audio id="adzan" preload="auto"><source src="https://www.islamcan.com/audio/adhans/azan1.mp3" type="audio/mpeg"></audio><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06130f">
+<meta name="description" content="Jam Sholat Digital Mushola At Taqwa">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="style.css"><title>Mushola At Taqwa — Jam Sholat Digital</title>
+</head>
+<body>
+<main class="app">
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">🕌</div><div><b>MUSHOLA AT TAQWA</b><small>JAM SHOLAT DIGITAL</small></div></div>
+  <div class="top-actions"><span class="tv-badge">MODE TV</span><button id="full" aria-label="Fullscreen">⛶</button></div>
+</header>
+
+<section class="hero">
+  <div class="location-pill">📍 <span id="location">Mencari lokasi…</span></div>
+  <div class="date-row"><span id="date">Memuat tanggal…</span><span id="hijri"></span></div>
+  <h1 id="clock">00:00:00</h1>
+  <div class="next-panel"><span id="next-label">MENUJU WAKTU SHOLAT</span><strong id="next">Menghitung…</strong></div>
+</section>
+
+<section class="prayer-grid" id="prayer-times"><div class="loading">Mengambil jadwal sholat…</div></section>
+
+<section class="announcement"><span>📢</span><div id="announcementText">Mohon matikan suara HP dan jaga ketenangan selama berada di mushola.</div></section>
+
+<section class="controls">
+  <button id="audio">🔇 Aktifkan Suara Adzan</button>
+  <button id="locbtn">📍 Perbarui Lokasi</button>
+</section>
+<section class="info"><div>STATUS<strong id="status">Online</strong></div><div>BATERAI<strong id="battery">—</strong></div><div>MODE<strong>TV / PWA</strong></div></section>
+<label class="mute"><input type="checkbox" id="night" checked> Mute otomatis 22:00–04:00</label>
+<footer>© 2026 Abadi Jaya · Jadwal AlAdhan</footer>
+</main>
+<audio id="adzan" preload="auto"><source src="https://www.islamcan.com/audio/adhans/azan1.mp3" type="audio/mpeg"></audio>
+<script src="script.js"></script>
+</body></html>
