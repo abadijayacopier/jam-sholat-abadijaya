@@ -2,7 +2,7 @@
 
 body.tv-mode{overflow:hidden}.tv-mode .app{width:100%;max-width:none;height:100vh;min-height:100vh;padding:2.4vh 3.4vw}.tv-mode .topbar{flex:0 0 auto}.tv-mode .brand-mark{width:44px;height:44px}.tv-mode .hero{padding:1.6vh 0 1vh}.tv-mode .hero h1{font-size:min(14vw,13vh);margin:1.2vh 0 1.8vh}.tv-mode .date-row{margin:1vh 0;font-size:1.1rem}.tv-mode .location-pill{font-size:.82rem}.tv-mode .next-panel{padding:1.2vh 3vw;max-width:760px}.tv-mode .prayer-grid{margin:1.4vh 0 1.6vh;gap:1vw}.tv-mode .prayer-card{padding:1.8vh .5vw}.tv-mode .prayer-card p{font-size:min(3.2vw,4.5vh)}.tv-mode .announcement{margin-bottom:0;padding:1.2vh 1.2vw}.tv-mode .controls,.tv-mode .info,.tv-mode .mute,.tv-mode footer{display:none}.tv-mode .top-actions button{display:none}.tv-mode .tv-badge{padding:6px 10px}
 
-@media(max-width:700px){.app{padding:18px 16px}.prayer-grid{grid-template-columns:repeat(2,1fr)}.prayer-card:last-child{grid-column:1/-1;max-width:50%;justify-self:center;width:100%}.info{grid-template-columns:1fr}.brand-mark{width:44px;height:44px}.tv-badge{display:none}}
+@media(max-width:700px){.app{padding:18px 16px}.prayer-grid{grid-template-columns:repeat(2,1fr)} .prayer-card:last-child{grid-column:auto;max-width:none;justify-self:stretch;width:auto}.info{grid-template-columns:1fr}.brand-mark{width:44px;height:44px}.tv-badge{display:none}}
 @media(orientation:landscape) and (max-height:600px){.app{padding:8px 18px}.hero{padding:5px 0}.hero h1{font-size:5rem;margin:4px}.prayer-card{padding:8px}.prayer-card p{font-size:1.2rem}.announcement{display:none}.info,.mute,footer{display:none}}
 
 
