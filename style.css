@@ -222,3 +222,28 @@ body{overflow-x:hidden}
   .tv-mode.layout-a .announcement{position:relative;left:auto;right:auto;bottom:auto;height:auto;margin:0 0 10px;border:1px solid var(--border);border-radius:11px}
   .tv-mode.layout-a .bottom-ticker{display:flex}
 }
+
+/* ===== SIDE CLOCK BESIDE PRAYER SCHEDULE ===== */
+.clock-side-card{position:relative;text-align:center;padding:20px 12px;border-radius:20px;background:linear-gradient(180deg,#102f25,#0a211b);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
+.clock-side-card .tv-clock{font-size:clamp(2rem,4vw,3.7rem);font-weight:950;line-height:.95;letter-spacing:-.04em;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.clock-side-card .tv-date{font-size:.72rem;font-weight:800;color:var(--accent2);margin-top:10px}
+.clock-side-card .tv-hijri{font-size:.62rem;color:var(--muted);margin-top:4px}
+.hero h1{display:none}
+.prayer-grid{grid-template-columns:1.35fr repeat(6,minmax(0,1fr))}
+@media(max-width:1199px){
+  .prayer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .clock-side-card{grid-column:span 1}
+}
+@media(max-width:700px){
+  .prayer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .clock-side-card{padding:14px 7px;border-radius:14px}
+  .clock-side-card .tv-clock{font-size:clamp(1.7rem,8vw,2.45rem)}
+  .clock-side-card .tv-date{font-size:.54rem;margin-top:6px}
+  .clock-side-card .tv-hijri{font-size:.48rem}
+}
+@media(max-width:900px) and (orientation:landscape) and (max-height:600px){
+  .prayer-grid{grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+  .clock-side-card{padding:8px 3px;border-radius:9px}
+  .clock-side-card .tv-clock{font-size:clamp(1rem,5vw,1.5rem)}
+  .clock-side-card .tv-date,.clock-side-card .tv-hijri{font-size:.4rem;margin-top:2px}
+}
