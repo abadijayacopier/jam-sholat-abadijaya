@@ -29,3 +29,19 @@ body{position:relative;background:#06130f!important}
 .app{position:relative;z-index:2}
 .tv-mode .bg-vignette{background:linear-gradient(180deg,rgba(0,0,0,.38),rgba(0,12,9,.62) 52%,rgba(0,6,5,.78))}
 .tv-mode .next-panel,.tv-mode .prayer-card,.tv-mode .announcement{backdrop-filter:blur(4px);background-color:rgba(5,30,23,.58)}
+
+
+/* ===== RUNNING TEXT / BOTTOM TICKER ===== */
+.bottom-ticker{display:flex;align-items:center;width:100%;margin-top:auto;min-height:42px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:rgba(5,24,19,.72);backdrop-filter:blur(5px);box-shadow:0 8px 28px #0003}
+.ticker-label{flex:0 0 auto;padding:10px 15px;background:var(--accent);color:var(--bg);font-size:.62rem;font-weight:900;letter-spacing:.08em;z-index:2}
+.ticker-track{position:relative;overflow:hidden;flex:1;white-space:nowrap}
+.ticker-content{display:inline-block;padding-left:100%;padding-right:40px;color:var(--accent2);font-size:.76rem;font-weight:650;letter-spacing:.02em;animation:tickerMove 28s linear infinite}
+@keyframes tickerMove{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.tv-mode .bottom-ticker{margin-top:1.2vh;min-height:4.2vh;border-radius:10px;background:rgba(3,20,16,.62)}
+.tv-mode .ticker-label{padding:1.1vh 1.2vw;font-size:.62rem}
+.tv-mode .ticker-content{font-size:min(1.05vw,1.65vh);padding-right:3vw;animation-duration:32s}
+@media(max-width:700px){
+  .bottom-ticker{min-height:38px;margin-top:12px}
+  .ticker-label{padding:9px 11px;font-size:.55rem}
+  .ticker-content{font-size:.68rem;animation-duration:24s}
+}
