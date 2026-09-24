@@ -287,3 +287,28 @@ body{overflow-x:hidden}
 }
 
 @media (orientation:landscape) and (min-width:700px){.prayer-card p{white-space:nowrap;overflow:visible;text-overflow:clip;font-size:clamp(1.05rem,2.35vw,2.75rem);letter-spacing:-.035em}.prayer-card h3,.iqamah{overflow:visible;text-overflow:clip}.prayer-grid{grid-template-columns:minmax(150px,1.2fr) repeat(6,minmax(0,1fr)) !important}}
+
+/* ===== LANDSCAPE: SCHEDULE DOCKED ABOVE RUNNING TEXT ===== */
+@media (orientation:landscape) and (min-width:700px){
+  body:not(.tv-mode) .app{
+    min-height:100dvh;
+    height:100dvh;
+  }
+  body:not(.tv-mode) .prayer-grid{
+    margin-top:auto !important;
+    margin-bottom:1vh !important;
+    flex-shrink:0;
+  }
+  body:not(.tv-mode) .bottom-ticker{
+    margin-top:0 !important;
+    flex-shrink:0;
+  }
+}
+@media (orientation:landscape) and (min-width:700px){
+  .tv-mode.layout-a .prayer-grid{
+    bottom:4.6vh;
+  }
+  .tv-mode.layout-a .announcement{
+    bottom:0;
+  }
+}
