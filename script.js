@@ -1,10 +1,15 @@
 let times={},dateData={},audioOn=false,lastPlayed="",locationSource="";
 const FALLBACK={lat:-7.65,lon:111.37,label:"Lokasi Mushola At Taqwa"};
 const P=[["Fajr","Subuh"],["Sunrise","Syuruq"],["Dhuhr","Dzuhur"],["Asr","Ashar"],["Maghrib","Maghrib"],["Isha","Isya"]];
+const IQAMAH={Fajr:"04:15",Sunrise:"—",Dhuhr:"11:36",Asr:"14:48",Maghrib:"17:40",Isha:"18:00"};
 const $=id=>document.getElementById(id);
-function applyTheme(theme){const allowed=["emerald","blue","gold","purple","ramadan","minimal"];if(!allowed.includes(theme))theme="emerald";document.body.dataset.theme=theme;localStorage.setItem("prayerTheme",theme);document.querySelectorAll(".theme-panel button").forEach(b=>b.classList.toggle("active",b.dataset.theme===theme))}
+function applyTheme(theme){const allowed=["green","blue","gold","purple","ramadan","led","glass","classic"];if(!allowed.includes(theme))theme="green";document.body.dataset.theme=theme;localStorage.setItem("prayerTheme",theme);document.querySelectorAll(".theme-panel button").forEach(b=>b.classList.toggle("active",b.dataset.theme===theme))}
 const themeFromUrl=new URLSearchParams(window.location.search).get("theme");
-applyTheme(themeFromUrl||localStorage.getItem("prayerTheme")||"emerald");
+applyTheme(themeFromUrl||localStorage.getItem("prayerTheme")||"green");
+function applyLayout(layout){const allowed=["a","b","c"];if(!allowed.includes(layout))layout="a";document.body.classList.remove("layout-a","layout-b","layout-c");document.body.classList.add("layout-"+layout);localStorage.setItem("prayerLayout",layout);document.querySelectorAll(".layout-panel button").forEach(b=>b.classList.toggle("active",b.dataset.layout===layout))}
+const layoutFromUrl=new URLSearchParams(window.location.search).get("layout");
+applyLayout(layoutFromUrl||localStorage.getItem("prayerLayout")||"a");
+document.querySelectorAll(".layout-panel button").forEach(b=>b.onclick=()=>applyLayout(b.dataset.layout));
 document.querySelectorAll(".theme-panel button").forEach(b=>b.onclick=()=>applyTheme(b.dataset.theme));
 const isTV=new URLSearchParams(window.location.search).get("tv")==="1"||window.matchMedia("(min-width:1200px) and (orientation:landscape)").matches;
 if(isTV)document.body.classList.add("tv-mode");
@@ -86,7 +91,7 @@ function render(){
       const nh=next?times[next[0]].split(":").map(Number):null;
       active=cur>=h*60+m&&(!nh||cur<nh[0]*60+nh[1]);
     }
-    box.innerHTML+=`<div class="prayer-card ${active?"active":""}"><h3>${x[1]}</h3><p>${t}</p><small>${x[0]==="Sunrise"?"Matahari terbit":"Waktu sholat"}</small></div>`;
+    box.innerHTML+=`<div class="prayer-card ${active?"active":""}"><h3>${x[1]}</h3><p>${t}</p><small>${x[0]==="Sunrise"?"Matahari terbit":"Waktu sholat"}</small><span class="iqamah">IQAMAH ${IQAMAH[x[0]]||"—"}</span></div>`;
   });
 }
 
