@@ -120,6 +120,8 @@ function tick(){
     const d=Math.max(0,next[1]-cur),hh=Math.floor(d/60),mm=Math.floor(d%60),ss=Math.floor((d*60)%60);
     $("next-label").textContent="MENUJU "+next[0].toUpperCase();
     $("next").textContent=`${String(hh).padStart(2,"0")}:${String(mm).padStart(2,"0")}:${String(ss).padStart(2,"0")}`;
+    if($("countdownLabel"))$("countdownLabel").textContent="MENUJU "+next[0].toUpperCase();
+    if($("countdownValue"))$("countdownValue").textContent=$("next").textContent;
   }
 
   if(audioOn&&!($("night").checked&&(n.getHours()>=22||n.getHours()<4))){
@@ -181,4 +183,24 @@ function slideBackground(){
 if(bgA&&bgB){
   showBg(BG_IMAGES[0],bgA);
   setInterval(slideBackground,15000);
+}
+
+const showcaseA=document.querySelector(".showcase-a"),showcaseB=document.querySelector(".showcase-b");
+let showcaseIndex=0,showcaseLayer=showcaseA;
+function showShowcase(url,layer){
+  if(!layer)return;
+  layer.style.backgroundImage='url("' + url + '")';
+  requestAnimationFrame(()=>layer.classList.add("active"));
+}
+function slideShowcase(){
+  if(!showcaseA||!showcaseB)return;
+  const next=(showcaseIndex+1)%BG_IMAGES.length;
+  const nextLayer=showcaseLayer===showcaseA?showcaseB:showcaseA;
+  nextLayer.classList.remove("active");
+  showShowcase(BG_IMAGES[next],nextLayer);
+  setTimeout(()=>{showcaseLayer.classList.remove("active");showcaseLayer=nextLayer;showcaseIndex=next},1500);
+}
+if(showcaseA&&showcaseB){
+  showShowcase(BG_IMAGES[0],showcaseA);
+  setInterval(slideShowcase,12000);
 }
