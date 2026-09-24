@@ -2,6 +2,10 @@ let times={},dateData={},audioOn=false,lastPlayed="",locationSource="";
 const FALLBACK={lat:-7.65,lon:111.37,label:"Lokasi Mushola At Taqwa"};
 const P=[["Fajr","Subuh"],["Sunrise","Syuruq"],["Dhuhr","Dzuhur"],["Asr","Ashar"],["Maghrib","Maghrib"],["Isha","Isya"]];
 const $=id=>document.getElementById(id);
+function applyTheme(theme){const allowed=["emerald","blue","gold","purple","ramadan","minimal"];if(!allowed.includes(theme))theme="emerald";document.body.dataset.theme=theme;localStorage.setItem("prayerTheme",theme);document.querySelectorAll(".theme-panel button").forEach(b=>b.classList.toggle("active",b.dataset.theme===theme))}
+const themeFromUrl=new URLSearchParams(window.location.search).get("theme");
+applyTheme(themeFromUrl||localStorage.getItem("prayerTheme")||"emerald");
+document.querySelectorAll(".theme-panel button").forEach(b=>b.onclick=()=>applyTheme(b.dataset.theme));
 const isTV=new URLSearchParams(window.location.search).get("tv")==="1"||window.matchMedia("(min-width:1200px) and (orientation:landscape)").matches;
 if(isTV)document.body.classList.add("tv-mode");
 
