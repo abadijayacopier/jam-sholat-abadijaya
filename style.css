@@ -351,3 +351,5 @@ body{overflow-x:hidden}
 .tv-mode.layout-a .announcement{height:4.8vh}
 .tv-mode.layout-a .bottom-ticker{display:flex}
 .tv-mode.layout-a .prayer-grid{bottom:9.6vh}
+
+.hero .next-panel{display:none}
