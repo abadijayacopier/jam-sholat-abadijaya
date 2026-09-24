@@ -80,7 +80,7 @@ async function load(lat,lon){
 
 function render(){
   const n=new Date(),cur=n.getHours()*60+n.getMinutes(),box=$("prayer-times");
-  box.innerHTML="";
+  box.innerHTML= isTV ? '<div class="tv-clock-card"><div class="tv-clock" id="tvClock">00:00:00</div><div class="tv-date" id="tvDate">Memuat tanggal…</div><div class="tv-hijri" id="tvHijri"></div></div>' : "";
   P.forEach((x,i)=>{
     const t=times[x[0]];
     if(!t)return;
@@ -97,6 +97,9 @@ function render(){
 
 function tick(){
   const n=new Date(),h=String(n.getHours()).padStart(2,"0"),m=String(n.getMinutes()).padStart(2,"0"),s=String(n.getSeconds()).padStart(2,"0");
+  if($("tvClock"))$("tvClock").textContent=h+":"+m+":"+s;
+  if($("tvDate"))$("tvDate").textContent=n.toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  if($("tvHijri"))$("tvHijri").textContent=dateData.hijri?(dateData.hijri.day+" "+(dateData.hijri.month?.en||"")+" "+dateData.hijri.year+" H"):"";
   $("clock").textContent=`${h}:${m}:${s}`;
   $("date").textContent=n.toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   if(dateData.hijri)$("hijri").textContent=`${dateData.hijri.day} ${dateData.hijri.month?.en||""} ${dateData.hijri.year} H`;
