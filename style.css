@@ -9,11 +9,14 @@ body.tv-mode{overflow:hidden}.tv-mode .app{width:100%;max-width:none;height:100v
 /* ===== MULTI THEME SYSTEM ===== */
 :root{--bg:#06130f;--bg2:#0d3024;--panel:#0a241c;--panel2:#10382a;--border:#2f6c55;--accent:#6dffb8;--accent2:#b9ffe0;--gold:#ffe078;--muted:#8faea1;--shadow:0 20px 60px #0005}
 body{background:radial-gradient(circle at 50% -20%,var(--bg2),var(--bg) 70%)}
+body[data-theme=green]{--bg:#06130f;--bg2:#185b42;--panel:#0a241b;--panel2:#124331;--border:#3b8a68;--accent:#6dffb8;--accent2:#d5ffea;--gold:#ffe078}
 body[data-theme=blue]{--bg:#07152e;--bg2:#163d78;--panel:#0b2348;--panel2:#12396e;--border:#3774bd;--accent:#62b8ff;--accent2:#d2ebff;--gold:#ffe07a}
 body[data-theme=gold]{--bg:#171008;--bg2:#513b16;--panel:#21180d;--panel2:#3b2b12;--border:#8c6d2e;--accent:#ffd76a;--accent2:#fff0bf;--gold:#fff2a1}
 body[data-theme=purple]{--bg:#10091b;--bg2:#38205a;--panel:#1d1230;--panel2:#30204b;--border:#7251a4;--accent:#c79cff;--accent2:#eadcff;--gold:#ffe58a}
 body[data-theme=ramadan]{--bg:#07120e;--bg2:#234e3c;--panel:#0d2419;--panel2:#173c29;--border:#a2833a;--accent:#8ff0b6;--accent2:#f3e5a8;--gold:#ffd45e}
-body[data-theme=minimal]{--bg:#0c1012;--bg2:#20282c;--panel:#151b1e;--panel2:#20282c;--border:#53636b;--accent:#f1f5f6;--accent2:#d8e1e5;--gold:#ffd76a}
+body[data-theme=led]{--bg:#02070b;--bg2:#0b1822;--panel:#071018;--panel2:#0d1c27;--border:#17445d;--accent:#35d8ff;--accent2:#d5f8ff;--gold:#7df3ff}
+body[data-theme=glass]{--bg:#08131c;--bg2:#28506a;--panel:rgba(15,31,43,.48);--panel2:rgba(27,55,72,.55);--border:#79b7d0;--accent:#8ee8ff;--accent2:#e2f8ff;--gold:#ffe49a}
+body[data-theme=classic]{--bg:#100d08;--bg2:#46351b;--panel:#1b150c;--panel2:#332610;--border:#8d7138;--accent:#f4d47a;--accent2:#fff1c2;--gold:#ffe08a}
 .theme-panel{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;align-items:center;margin:0 0 15px}
 .theme-panel span{font-size:.55rem;color:var(--muted);letter-spacing:.15em}
 .theme-panel button{border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:var(--panel);color:var(--accent2);font-size:.65rem;cursor:pointer}
@@ -45,3 +48,30 @@ body{position:relative;background:#06130f!important}
   .ticker-label{padding:9px 11px;font-size:.55rem}
   .ticker-content{font-size:.68rem;animation-duration:24s}
 }
+
+
+/* ===== STYLE A / B / C LAYOUTS ===== */
+.layout-panel{display:flex;justify-content:center;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 12px}
+.layout-panel span{font-size:.55rem;color:var(--muted);letter-spacing:.15em}
+.layout-panel button{border:1px solid var(--border);border-radius:999px;padding:6px 11px;background:var(--panel);color:var(--accent2);font-size:.65rem;font-weight:800;cursor:pointer}
+.layout-panel button.active{background:var(--accent);color:var(--bg)}
+.tv-mode .layout-panel{display:none}
+
+/* Style B: compact broadcast strip */
+body.layout-b .prayer-grid{gap:7px}
+body.layout-b .prayer-card{border-radius:10px;padding:12px 6px 10px}
+body.layout-b .prayer-card h3{font-size:.68rem;letter-spacing:.08em}
+body.layout-b .prayer-card p{font-size:clamp(1.7rem,3.2vw,2.8rem);margin:4px 0 0}
+body.layout-b .prayer-card small{font-size:.52rem}
+body.layout-b .prayer-card .iqamah{margin-top:4px;padding-top:4px;border-top:1px solid var(--border);font-size:.55rem}
+
+/* Style C: cinematic active-prayer focus */
+body.layout-c .prayer-card{padding:15px 7px;border-radius:16px}
+body.layout-c .prayer-card.active{transform:scale(1.035);box-shadow:0 0 42px color-mix(in srgb,var(--accent) 28%,transparent)}
+body.layout-c .prayer-card:not(.active){opacity:.82}
+body.layout-c .prayer-card .iqamah{font-size:.6rem}
+
+/* Iqamah */
+.iqamah{display:block;margin-top:6px;color:var(--gold);font-size:.62rem;font-weight:800;letter-spacing:.04em}
+.tv-mode .iqamah{font-size:min(.65vw,1.05vh)}
+@media(max-width:700px){.layout-panel{margin-top:8px}.iqamah{font-size:.58rem}}
