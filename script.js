@@ -106,8 +106,6 @@ function tick(){
   $("clock").textContent=`${h}:${m}:${s}`;
   $("date").textContent=n.toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
   if(dateData.hijri)$("hijri").textContent=`${dateData.hijri.day} ${dateData.hijri.month?.en||""} ${dateData.hijri.year} H`;
-  render();
-
   let cur=n.getHours()*60+n.getMinutes()+n.getSeconds()/60,next=null;
   for(const x of P){
     if(x[0]==="Sunrise")continue;
