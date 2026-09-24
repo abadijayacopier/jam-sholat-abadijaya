@@ -83,7 +83,7 @@ async function load(lat,lon){
 
 function render(){
   const n=new Date(),cur=n.getHours()*60+n.getMinutes(),box=$("prayer-times");
-  box.innerHTML= isTV ? '<div class="tv-clock-card"><div class="tv-clock" id="tvClock">00:00:00</div><div class="tv-date" id="tvDate">Memuat tanggal…</div><div class="tv-hijri" id="tvHijri"></div></div>' : "";
+  box.innerHTML='<div class="tv-clock-card clock-side-card"><div class="tv-clock" id="tvClock">00:00:00</div><div class="tv-date" id="tvDate">Memuat tanggal…</div><div class="tv-hijri" id="tvHijri"></div></div>';
   P.forEach((x,i)=>{
     const t=times[x[0]];
     if(!t)return;
