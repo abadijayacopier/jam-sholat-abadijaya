@@ -11,10 +11,10 @@ const layoutFromUrl=new URLSearchParams(window.location.search).get("layout");
 applyLayout(layoutFromUrl||localStorage.getItem("prayerLayout")||"a");
 document.querySelectorAll(".layout-panel button").forEach(b=>b.onclick=()=>applyLayout(b.dataset.layout));
 document.querySelectorAll(".theme-panel button").forEach(b=>b.onclick=()=>applyTheme(b.dataset.theme));
-const const qp=new URLSearchParams(window.location.search);
+const qp=new URLSearchParams(window.location.search);
 const forceTV=qp.get("tv")==="1";
 const autoTV=window.matchMedia("(min-width:1600px) and (min-height:800px) and (orientation:landscape) and (hover:none)").matches;
-isTV=forceTV||autoTV;
+const isTV=forceTV||autoTV;
 if(isTV)document.body.classList.add("tv-mode");
 
 function setStatus(text){$("status").textContent=text}
