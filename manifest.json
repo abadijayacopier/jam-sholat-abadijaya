@@ -1,15 +1,1 @@
-{
-  "name": "Jam Sholat Abadi Jaya",
-  "short_name": "AbadiJaya",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#1a1a1a",
-  "theme_color": "#00ff88",
-  "icons": [
-    {
-      "src": "https://cdn-icons-png.flaticon.com/512/2699/2699194.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
-}
+{"name":"Jam Sholat Abadi Jaya","short_name":"Abadi Jaya","start_url":"./","scope":"./","display":"standalone","orientation":"any","background_color":"#061411","theme_color":"#071b16","description":"Jam digital dan jadwal sholat Abadi Jaya.","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
