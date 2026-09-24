@@ -140,3 +140,28 @@ if(navigator.getBattery)navigator.getBattery().then(b=>{
 setInterval(tick,1000);
 tick();
 getUserLocation();
+
+const BG_IMAGES=[
+"https://commons.wikimedia.org/wiki/Special:FilePath/Sunset%20mosque.jpg?width=1920",
+"https://commons.wikimedia.org/wiki/Special:FilePath/Koutoubia%20Mosque%20Sunset.jpg?width=1920",
+"https://commons.wikimedia.org/wiki/Special:FilePath/Mosque%20with%20Sunset.jpg?width=1600",
+"https://commons.wikimedia.org/wiki/Special:FilePath/Sultan%20Omar%20Ali%20Saifuddin%20Mosque%2002.jpg?width=1920",
+"https://commons.wikimedia.org/wiki/Special:FilePath/Masjid%20Istiqlal%20Jadi%20Destinasi%20Favorit%20Ngabuburit%20dan%20Berbuka%20Puasa.jpg?width=1920"
+];
+const bgA=document.querySelector(".bg-a"),bgB=document.querySelector(".bg-b");
+let bgIndex=0,bgLayer=bgA;
+function showBg(url,layer){
+  layer.style.backgroundImage=`url("${url}")`;
+  requestAnimationFrame(()=>layer.classList.add("active"));
+}
+function slideBackground(){
+  const next=(bgIndex+1)%BG_IMAGES.length;
+  const nextLayer=bgLayer===bgA?bgB:bgA;
+  nextLayer.classList.remove("active");
+  showBg(BG_IMAGES[next],nextLayer);
+  setTimeout(()=>{bgLayer.classList.remove("active");bgLayer=nextLayer;bgIndex=next},1900);
+}
+if(bgA&&bgB){
+  showBg(BG_IMAGES[0],bgA);
+  setInterval(slideBackground,15000);
+}
