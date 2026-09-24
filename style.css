@@ -117,3 +117,108 @@ body.layout-c .prayer-card .iqamah{font-size:.6rem}
 }
 
 .brand-mark img{width:100%;height:100%;display:block;object-fit:cover;border-radius:inherit}
+
+/* ===== RESPONSIVE DEVICE SYSTEM ===== */
+html{overflow-x:hidden}
+body{overflow-x:hidden}
+.app{width:100%;max-width:1500px}
+.brand small{max-width:min(72vw,850px)}
+.prayer-card{min-width:0}
+.prayer-card p,.prayer-card h3,.iqamah{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Phones */
+@media (max-width:599px){
+  .app{min-height:100dvh;padding:14px 12px 12px}
+  .topbar{align-items:flex-start}
+  .brand{gap:9px;min-width:0}
+  .brand-mark{width:42px;height:42px;flex:0 0 42px;border-radius:11px}
+  .brand b{font-size:clamp(.85rem,4.6vw,1.1rem);letter-spacing:.07em;white-space:nowrap}
+  .brand small{font-size:.5rem;letter-spacing:.04em;line-height:1.25;max-width:72vw;margin-top:3px}
+  .top-actions button{width:40px;height:40px;border-radius:11px;font-size:18px}
+  .hero{padding:18px 0 12px}
+  .location-pill{font-size:.7rem;padding:7px 11px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .date-row{gap:6px;font-size:.72rem;margin:9px 0 3px}
+  .hero h1{font-size:clamp(3.2rem,18vw,5.8rem);letter-spacing:.01em;margin:9px 0 15px}
+  .next-panel{width:100%;padding:10px 12px;border-radius:14px}
+  .next-panel span{font-size:.5rem;letter-spacing:.12em}
+  .next-panel strong{font-size:clamp(1rem,6vw,1.45rem)}
+  .prayer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:9px 0 13px}
+  .prayer-card{padding:13px 7px 12px;border-radius:14px}
+  .prayer-card h3{font-size:.68rem}
+  .prayer-card p{font-size:clamp(1.35rem,8vw,2rem);margin:5px 0 0}
+  .prayer-card small{font-size:.5rem}
+  .iqamah{font-size:.5rem;margin-top:4px}
+  .prayer-card.active{transform:translateY(-2px)}
+  .prayer-card.active:after{font-size:.4rem;top:6px;right:6px}
+  .announcement{padding:9px 11px;margin-bottom:11px;border-radius:11px}
+  .announcement div{font-size:.68rem}
+  .bottom-ticker{min-height:36px;margin-top:8px;border-radius:10px}
+  .ticker-label{padding:8px 9px;font-size:.48rem}
+  .ticker-content{font-size:.6rem}
+  .theme-panel,.layout-panel{gap:5px}
+  .theme-panel button,.layout-panel button{padding:6px 8px;font-size:.58rem}
+  .controls{gap:7px}
+  .controls button{padding:9px 11px;font-size:.72rem}
+  footer{font-size:.52rem;margin-top:10px}
+}
+
+/* Small landscape phones */
+@media (max-width:900px) and (orientation:landscape) and (max-height:600px){
+  .app{min-height:100dvh;padding:8px 12px}
+  .topbar{height:42px}
+  .brand-mark{width:38px;height:38px}
+  .brand b{font-size:.95rem}
+  .brand small{font-size:.43rem}
+  .hero{padding:4px 0 7px}
+  .location-pill,.date-row{display:none}
+  .hero h1{font-size:clamp(2.8rem,10vh,5rem);margin:3px 0 7px}
+  .next-panel{padding:6px 10px;max-width:430px}
+  .prayer-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin:7px 0 8px}
+  .prayer-card{padding:8px 3px;border-radius:9px}
+  .prayer-card h3{font-size:.55rem}
+  .prayer-card p{font-size:clamp(1rem,5vw,1.5rem);margin:3px 0}
+  .prayer-card small{display:none}
+  .iqamah{font-size:.42rem;margin-top:2px}
+  .announcement{padding:6px 8px;margin:0}
+  .bottom-ticker{min-height:28px}
+  .theme-panel,.layout-panel,.controls,.info,.mute,footer{display:none}
+}
+
+/* Tablets */
+@media (min-width:600px) and (max-width:1199px){
+  .app{padding:22px clamp(20px,4vw,40px)}
+  .brand b{font-size:clamp(1.05rem,2.5vw,1.5rem)}
+  .brand small{font-size:.58rem;letter-spacing:.12em}
+  .hero h1{font-size:clamp(5rem,14vw,9rem)}
+  .prayer-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+  .prayer-card{padding:17px 9px}
+  .prayer-card p{font-size:clamp(1.55rem,5vw,2.4rem)}
+}
+
+/* Desktop / laptop */
+@media (min-width:1200px) and (max-width:1599px){
+  .app{padding:26px clamp(28px,4vw,56px)}
+  .prayer-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:11px}
+  .prayer-card{padding:18px 8px}
+  .prayer-card p{font-size:clamp(1.7rem,2.7vw,2.6rem)}
+}
+
+/* True TV / large landscape display is activated by ?tv=1 or TV-like pointer/viewport */
+@media (min-width:1600px) and (min-height:800px) and (orientation:landscape) and (hover:none){
+  body:not(.tv-mode) .app{max-width:1800px;padding:28px 40px}
+  body:not(.tv-mode) .prayer-grid{grid-template-columns:repeat(6,minmax(0,1fr))}
+}
+
+/* Prevent TV reference layout from leaking into normal phones/tablets */
+@media (max-width:1199px){
+  .tv-mode.layout-a .topbar{position:relative;left:auto;right:auto;top:auto}
+  .tv-mode.layout-a .hero{height:auto;padding:18px 0 12px}
+  .tv-mode.layout-a .location-pill,.tv-mode.layout-a .date-row,.tv-mode.layout-a .hero h1{display:block}
+  .tv-mode.layout-a .hero h1{font-size:clamp(3.2rem,18vw,6rem)}
+  .tv-mode.layout-a .next-panel{position:relative;left:auto;top:auto;transform:none;margin:auto;display:block}
+  .tv-mode.layout-a .prayer-grid{position:relative;left:auto;right:auto;bottom:auto;height:auto;grid-template-columns:repeat(2,minmax(0,1fr));background:transparent;box-shadow:none;overflow:visible;border-radius:0}
+  .tv-mode.layout-a .prayer-card,.tv-mode.layout-a .tv-clock-card{border:1px solid var(--border);border-radius:14px;background:var(--panel);padding:13px 7px}
+  .tv-mode.layout-a .tv-clock-card{display:none}
+  .tv-mode.layout-a .announcement{position:relative;left:auto;right:auto;bottom:auto;height:auto;margin:0 0 10px;border:1px solid var(--border);border-radius:11px}
+  .tv-mode.layout-a .bottom-ticker{display:flex}
+}
