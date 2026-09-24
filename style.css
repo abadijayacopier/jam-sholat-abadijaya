@@ -4,3 +4,18 @@ body.tv-mode{overflow:hidden}.tv-mode .app{width:100%;max-width:none;height:100v
 
 @media(max-width:700px){.app{padding:18px 16px}.prayer-grid{grid-template-columns:repeat(2,1fr)}.prayer-card:last-child{grid-column:1/-1;max-width:50%;justify-self:center;width:100%}.info{grid-template-columns:1fr}.brand-mark{width:44px;height:44px}.tv-badge{display:none}}
 @media(orientation:landscape) and (max-height:600px){.app{padding:8px 18px}.hero{padding:5px 0}.hero h1{font-size:5rem;margin:4px}.prayer-card{padding:8px}.prayer-card p{font-size:1.2rem}.announcement{display:none}.info,.mute,footer{display:none}}
+
+
+/* ===== MULTI THEME SYSTEM ===== */
+:root{--bg:#06130f;--bg2:#0d3024;--panel:#0a241c;--panel2:#10382a;--border:#2f6c55;--accent:#6dffb8;--accent2:#b9ffe0;--gold:#ffe078;--muted:#8faea1;--shadow:0 20px 60px #0005}
+body{background:radial-gradient(circle at 50% -20%,var(--bg2),var(--bg) 70%)}
+body[data-theme=blue]{--bg:#07152e;--bg2:#163d78;--panel:#0b2348;--panel2:#12396e;--border:#3774bd;--accent:#62b8ff;--accent2:#d2ebff;--gold:#ffe07a}
+body[data-theme=gold]{--bg:#171008;--bg2:#513b16;--panel:#21180d;--panel2:#3b2b12;--border:#8c6d2e;--accent:#ffd76a;--accent2:#fff0bf;--gold:#fff2a1}
+body[data-theme=purple]{--bg:#10091b;--bg2:#38205a;--panel:#1d1230;--panel2:#30204b;--border:#7251a4;--accent:#c79cff;--accent2:#eadcff;--gold:#ffe58a}
+body[data-theme=ramadan]{--bg:#07120e;--bg2:#234e3c;--panel:#0d2419;--panel2:#173c29;--border:#a2833a;--accent:#8ff0b6;--accent2:#f3e5a8;--gold:#ffd45e}
+body[data-theme=minimal]{--bg:#0c1012;--bg2:#20282c;--panel:#151b1e;--panel2:#20282c;--border:#53636b;--accent:#f1f5f6;--accent2:#d8e1e5;--gold:#ffd76a}
+.theme-panel{display:flex;justify-content:center;gap:7px;flex-wrap:wrap;align-items:center;margin:0 0 15px}
+.theme-panel span{font-size:.55rem;color:var(--muted);letter-spacing:.15em}
+.theme-panel button{border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:var(--panel);color:var(--accent2);font-size:.65rem;cursor:pointer}
+.theme-panel button.active{background:var(--accent);color:var(--bg);font-weight:900}
+.tv-mode .theme-panel{display:none}
