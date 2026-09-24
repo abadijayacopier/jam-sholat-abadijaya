@@ -136,9 +136,17 @@ function tick(){
 }
 
 $("audio").onclick=()=>{
-  audioOn=true;
-  $("audio").textContent="🔊 Suara Adzan Aktif";
-  $("adzan").play().then(()=>{$("adzan").pause();$("adzan").currentTime=0}).catch(()=>{});
+  audioOn=!audioOn;
+  $("audio").textContent=audioOn?"🔊 Suara Adzan Aktif":"🔇 Suara Adzan Nonaktif";
+  if(audioOn){
+    $("adzan").play().then(()=>{
+      $("adzan").pause();
+      $("adzan").currentTime=0;
+    }).catch(()=>{});
+  }else{
+    $("adzan").pause();
+    $("adzan").currentTime=0;
+  }
 };
 $("locbtn").onclick=getUserLocation;
 $("full").onclick=()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen?.();
