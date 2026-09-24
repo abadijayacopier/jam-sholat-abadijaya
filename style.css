@@ -19,3 +19,13 @@ body[data-theme=minimal]{--bg:#0c1012;--bg2:#20282c;--panel:#151b1e;--panel2:#20
 .theme-panel button{border:1px solid var(--border);border-radius:999px;padding:6px 10px;background:var(--panel);color:var(--accent2);font-size:.65rem;cursor:pointer}
 .theme-panel button.active{background:var(--accent);color:var(--bg);font-weight:900}
 .tv-mode .theme-panel{display:none}
+
+/* ===== BACKGROUND SLIDESHOW ===== */
+body{position:relative;background:#06130f!important}
+.bg-slides{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.bg-slide{position:absolute;inset:-2%;background-position:center;background-size:cover;background-repeat:no-repeat;opacity:0;transition:opacity 1.8s ease,transform 12s ease;transform:scale(1.03)}
+.bg-slide.active{opacity:1;transform:scale(1.08)}
+.bg-vignette{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.48),rgba(0,20,14,.68) 45%,rgba(0,8,6,.88))}
+.app{position:relative;z-index:2}
+.tv-mode .bg-vignette{background:linear-gradient(180deg,rgba(0,0,0,.38),rgba(0,12,9,.62) 52%,rgba(0,6,5,.78))}
+.tv-mode .next-panel,.tv-mode .prayer-card,.tv-mode .announcement{backdrop-filter:blur(4px);background-color:rgba(5,30,23,.58)}
