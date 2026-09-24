@@ -285,3 +285,5 @@ body{overflow-x:hidden}
   .tv-mode .next-panel{max-width:55vw}
   .tv-mode .prayer-grid{gap:5px}
 }
+
+@media (orientation:landscape) and (min-width:700px){.prayer-card p{white-space:nowrap;overflow:visible;text-overflow:clip;font-size:clamp(1.05rem,2.35vw,2.75rem);letter-spacing:-.035em}.prayer-card h3,.iqamah{overflow:visible;text-overflow:clip}.prayer-grid{grid-template-columns:minmax(150px,1.2fr) repeat(6,minmax(0,1fr)) !important}}
