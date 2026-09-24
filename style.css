@@ -75,3 +75,43 @@ body.layout-c .prayer-card .iqamah{font-size:.6rem}
 .iqamah{display:block;margin-top:6px;color:var(--gold);font-size:.62rem;font-weight:800;letter-spacing:.04em}
 .tv-mode .iqamah{font-size:min(.65vw,1.05vh)}
 @media(max-width:700px){.layout-panel{margin-top:8px}.iqamah{font-size:.58rem}}
+
+/* ===== TV STYLE A — REFERENCE BROADCAST BOARD ===== */
+.tv-mode.layout-a .app{padding:2.1vh 1.05vw 0;position:relative}
+.tv-mode.layout-a .topbar{position:absolute;left:1.6vw;top:2.2vh;right:1.6vw;z-index:8}
+.tv-mode.layout-a .brand{gap:10px;text-shadow:0 2px 8px #000}
+.tv-mode.layout-a .brand-mark{width:58px;height:58px;border-radius:8px;background:rgba(255,255,255,.72);border:2px solid rgba(255,255,255,.3);font-size:31px;box-shadow:0 3px 12px #0006}
+.tv-mode.layout-a .brand b{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.7rem,3vw,3.2rem);letter-spacing:-.02em;color:#fff;text-transform:none}
+.tv-mode.layout-a .brand small{font-size:clamp(.6rem,.85vw,.9rem);letter-spacing:.02em;color:#f4f4f4;margin-top:1px}
+.tv-mode.layout-a .tv-badge{display:none}
+.tv-mode.layout-a .hero{position:relative;height:0;padding:0;z-index:5;text-align:left}
+.tv-mode.layout-a .location-pill,.tv-mode.layout-a .date-row,.tv-mode.layout-a .hero h1{display:none}
+.tv-mode.layout-a .next-panel{position:absolute;left:1.55vw;top:60vh;transform:translateY(-100%);margin:0;max-width:none;padding:0;border:0;border-radius:13px;background:rgba(255,255,255,.96);box-shadow:0 3px 15px #0005;overflow:hidden;display:flex;align-items:center}
+.tv-mode.layout-a .next-panel span{padding:10px 13px;background:#3d73d8;color:#fff;font-size:0;letter-spacing:0}
+.tv-mode.layout-a .next-panel span::before{content:"◷";font-size:27px}
+.tv-mode.layout-a .next-panel strong{padding:8px 14px 8px 8px;color:#111;font-size:clamp(1.2rem,2.2vw,2rem);margin:0;font-variant-numeric:tabular-nums}
+.tv-mode.layout-a .prayer-grid{position:absolute;left:1.05vw;right:1.05vw;bottom:4.6vh;margin:0;gap:0;grid-template-columns:1.55fr repeat(6,1fr);height:16.5vh;z-index:6;overflow:hidden;border-radius:0 0 4px 4px;background:rgba(48,101,207,.96);box-shadow:0 -8px 30px #0005}
+.tv-mode.layout-a .prayer-card,.tv-mode.layout-a .tv-clock-card{border:0;border-right:1px solid rgba(20,53,130,.55);border-radius:0;background:transparent;box-shadow:none;transform:none;padding:1.2vh .35vw;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+.tv-mode.layout-a .prayer-card h3{color:#fff;font-size:min(1.45vw,2.5vh);font-weight:800;margin:0;letter-spacing:.02em}
+.tv-mode.layout-a .prayer-card p{color:#fff;font-size:min(3.2vw,5.7vh);line-height:.95;margin:.6vh 0 .45vh;font-weight:900;text-shadow:0 2px 4px #173f8a}
+.tv-mode.layout-a .prayer-card small{display:none}
+.tv-mode.layout-a .prayer-card .iqamah{margin:0;padding:2px 6px;background:rgba(13,40,106,.72);border-radius:2px;color:#fff;font-size:min(.68vw,1.25vh);letter-spacing:.02em}
+.tv-mode.layout-a .prayer-card.active{background:rgba(255,255,255,.12);border-bottom:4px solid #ffe05c;box-shadow:none}
+.tv-mode.layout-a .prayer-card.active:after{top:5px;right:5px;color:#fff;font-size:min(.48vw,1vh)}
+.tv-mode.layout-a .tv-clock-card{border-right:1px solid rgba(20,53,130,.55);align-items:flex-start;padding-left:1.2vw}
+.tv-mode.layout-a .tv-clock{font-size:min(4.4vw,7.2vh);font-weight:950;line-height:.9;letter-spacing:-.04em;color:#fff;font-variant-numeric:tabular-nums}
+.tv-mode.layout-a .tv-date{font-size:min(1.15vw,2vh);font-weight:800;color:#fff;margin-top:1vh}
+.tv-mode.layout-a .tv-hijri{font-size:min(.9vw,1.55vh);color:#e2edff;margin-top:.4vh}
+.tv-mode.layout-a .announcement{position:absolute;left:0;right:0;bottom:0;height:4.6vh;margin:0;border:0;border-radius:0;background:#050505;color:#fff;padding:0 4px;z-index:9}
+.tv-mode.layout-a .announcement span{display:none}
+.tv-mode.layout-a .announcement div{font-size:min(1.35vw,2.5vh);color:#fff;overflow:visible;text-overflow:clip;animation:tickerMove 28s linear infinite;padding-left:100%;display:inline-block}
+.tv-mode.layout-a .bottom-ticker{display:none}
+.tv-mode.layout-a .theme-panel,.tv-mode.layout-a .layout-panel,.tv-mode.layout-a .controls,.tv-mode.layout-a .info,.tv-mode.layout-a .mute,.tv-mode.layout-a footer{display:none}
+.tv-mode.layout-a .bg-vignette{background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.12) 45%,rgba(0,0,0,.38))}
+.tv-mode.layout-a .bg-slide{filter:saturate(1.05) contrast(1.05)}
+.tv-mode.layout-a .next-panel{backdrop-filter:none}
+@media(max-height:600px) and (orientation:landscape){
+ .tv-mode.layout-a .prayer-grid{height:18vh}
+ .tv-mode.layout-a .announcement{height:5vh}
+ .tv-mode.layout-a .next-panel{top:61vh}
+}
