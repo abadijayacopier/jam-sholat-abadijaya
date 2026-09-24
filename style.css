@@ -247,3 +247,41 @@ body{overflow-x:hidden}
   .clock-side-card .tv-clock{font-size:clamp(1rem,5vw,1.5rem)}
   .clock-side-card .tv-date,.clock-side-card .tv-hijri{font-size:.4rem;margin-top:2px}
 }
+
+/* ===== LANDSCAPE BOARD: CLOCK + 6 PRAYERS ALWAYS HORIZONTAL ===== */
+@media (orientation:landscape) and (min-width:700px){
+  .app{width:100%;max-width:none;padding:clamp(10px,2vw,28px) clamp(14px,3vw,48px)}
+  .topbar{min-height:clamp(40px,7vh,72px)}
+  .hero{padding:clamp(4px,1.2vh,14px) 0}
+  .hero h1{display:none}
+  .prayer-grid{
+    grid-template-columns:minmax(150px,1.25fr) repeat(6,minmax(100px,1fr)) !important;
+    gap:clamp(5px,0.8vw,14px);
+    width:100%;
+    margin:clamp(6px,1vh,14px) 0;
+  }
+  .clock-side-card{grid-column:auto !important;min-width:0}
+  .clock-side-card .tv-clock{font-size:clamp(1.7rem,4.2vw,4.5rem)}
+  .prayer-card{min-width:0;padding:clamp(8px,1.5vh,20px) clamp(4px,.7vw,12px)}
+  .prayer-card h3{font-size:clamp(.58rem,1.05vw,1rem)}
+  .prayer-card p{font-size:clamp(1.2rem,3.1vw,3.4rem)}
+  .prayer-card small{font-size:clamp(.42rem,.55vw,.65rem)}
+  .iqamah{font-size:clamp(.42rem,.58vw,.7rem)}
+  .next-panel{max-width:min(760px,65vw);padding:clamp(7px,1vh,13px) 2vw}
+  .announcement{margin-bottom:clamp(5px,1vh,12px)}
+}
+
+/* TV: fill the entire landscape screen with seven horizontal columns */
+.tv-mode .prayer-grid{
+  grid-template-columns:minmax(150px,1.25fr) repeat(6,minmax(100px,1fr)) !important;
+  width:100%;
+}
+.tv-mode .clock-side-card{grid-column:auto !important}
+.tv-mode .clock-side-card .tv-clock{font-size:min(4.2vw,7vh)}
+@media (orientation:landscape) and (max-width:1199px){
+  .tv-mode .app{padding:10px 14px}
+  .tv-mode .topbar{min-height:40px}
+  .tv-mode .hero{padding:3px 0 6px}
+  .tv-mode .next-panel{max-width:55vw}
+  .tv-mode .prayer-grid{gap:5px}
+}
