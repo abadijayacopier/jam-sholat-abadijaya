@@ -312,3 +312,42 @@ body{overflow-x:hidden}
     bottom:0;
   }
 }
+
+/* ===== MOSQUE SHOWCASE ABOVE PRAYER SCHEDULE ===== */
+.mosque-showcase{position:relative;width:100%;height:clamp(180px,27vh,360px);margin:clamp(4px,1vh,12px) 0;border:2px solid var(--border);border-radius:18px;overflow:hidden;background:#07130f;box-shadow:0 12px 35px #0006}
+.showcase-slide{position:absolute;inset:0;background-position:center;background-size:cover;background-repeat:no-repeat;opacity:0;transform:scale(1.03);transition:opacity 1.5s ease,transform 9s ease}
+.showcase-slide.active{opacity:1;transform:scale(1.08)}
+.showcase-vignette{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,12,8,.28) 55%,rgba(0,0,0,.58))}
+.showcase-caption{position:absolute;left:18px;bottom:14px;padding:7px 12px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(0,0,0,.42);backdrop-filter:blur(4px);color:#fff;font-size:.75rem;font-weight:850;letter-spacing:.08em}
+.countdown-announcement{justify-content:center;text-align:center;margin:0 0 12px;min-height:54px;padding:7px 18px}
+.countdown-announcement>span{font-size:25px;color:var(--gold)}
+.countdown-announcement div{display:flex;align-items:center;justify-content:center;gap:12px}
+.countdown-announcement small{color:var(--muted);font-size:.62rem;letter-spacing:.18em;font-weight:800}
+.countdown-announcement strong{color:var(--gold);font-size:clamp(1.35rem,2.8vw,2.1rem);font-variant-numeric:tabular-nums;line-height:1}
+@media(max-width:700px){
+ .mosque-showcase{height:170px;border-radius:14px;margin:8px 0}
+ .showcase-caption{font-size:.58rem;left:10px;bottom:9px}
+ .countdown-announcement{min-height:48px;padding:7px 10px}
+ .countdown-announcement div{gap:8px;flex-wrap:wrap}
+ .countdown-announcement small{font-size:.5rem}
+ .countdown-announcement strong{font-size:1.35rem}
+}
+/* Landscape: showcase fills the open middle area, schedule remains below it */
+@media(orientation:landscape) and (min-width:700px){
+ .mosque-showcase{height:clamp(130px,28vh,300px);margin:0 0 1vh}
+ .countdown-announcement{margin:0 0 1vh;min-height:5vh}
+}
+/* TV reference board: slideshow above the horizontal schedule */
+.tv-mode .mosque-showcase{height:clamp(150px,39vh,430px);margin:0 1.05vw 1vh;border-radius:0;border-width:2px}
+.tv-mode .countdown-announcement{min-height:5vh;margin:0 0 1vh}
+.tv-mode .next-panel{display:none}
+.tv-mode .hero{height:auto}
+.tv-mode.layout-a .mosque-showcase{position:absolute;left:1.05vw;right:1.05vw;top:10vh;width:auto;height:48vh;z-index:3;margin:0}
+.tv-mode.layout-a .countdown-announcement{position:absolute;left:1.05vw;right:1.05vw;bottom:4.8vh;height:4.8vh;z-index:10;margin:0;border:0;border-radius:0;background:rgba(3,15,12,.72);backdrop-filter:blur(5px)}
+.tv-mode.layout-a .countdown-announcement>span{font-size:2.5vh}
+.tv-mode.layout-a .countdown-announcement div{gap:12px}
+.tv-mode.layout-a .countdown-announcement small{font-size:1.05vh}
+.tv-mode.layout-a .countdown-announcement strong{font-size:2.7vh}
+.tv-mode.layout-a .announcement{height:4.8vh}
+.tv-mode.layout-a .bottom-ticker{display:flex}
+.tv-mode.layout-a .prayer-grid{bottom:9.6vh}
